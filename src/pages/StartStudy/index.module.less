@@ -1,0 +1,96 @@
+.startStudy {
+  position: relative;
+  flex: 1;
+  background-color: #ad6598;
+
+  :global {
+    .content-wrapper {
+      width: 500px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .card {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #eea2a4;
+      color: #000;
+      border-radius: 10px;
+      text-align: center;
+
+      .word {
+        margin-bottom: 30px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 65px;
+      }
+
+      .explain-list {
+        width: fit-content;
+        font-size: 16px;
+      }
+    }
+
+    .switch-wrapper {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+
+      .btn-switch {
+        height: fit-content;
+        padding: 12px 90px;
+        background-color: #2983bb;
+
+        &:hover {
+          background-color: #619ac3;
+        }
+
+        &.disabled {
+          background-color: #8a8a8a;
+        }
+      }
+    }
+
+    .opera-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .btn-tip {
+        background-color: #55bb8a;
+
+        &:hover {
+          background-color: #83cbac;
+        }
+      }
+
+      .btn-simple {
+        background-color: #e3b4b8;
+
+        &:hover {
+          background-color: #f0c9cf;
+        }
+      }
+
+      .btn-difficult {
+        background-color: #4c1f24;
+
+        &:hover {
+          background-color: #713b41;
+        }
+      }
+
+      .btn-delete {
+        background-color: #d42517;
+
+        &:hover {
+          background-color: #f34036;
+        }
+      }
+    }
+  }
+}
