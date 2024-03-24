@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
-import MyAside from './components/MyAside';
+import MyAside from './components/MyAside/index';
 import StartStudy from './pages/StartStudy';
 
 const router = createBrowserRouter([

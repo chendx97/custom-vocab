@@ -11,4 +11,9 @@
 
 body {
   margin: 0;
+  background-color: #ad6598;
+}
+
+a {
+  text-decoration: none;
 }
