@@ -28,11 +28,18 @@
         height: 100px;
         line-height: 100px;
         font-size: 65px;
+        opacity: 0;
       }
 
       .explain-list {
         width: fit-content;
         font-size: 16px;
+        opacity: 0;
+      }
+
+      .show {
+        opacity: 1;
+        transition: all 0.5s;
       }
     }
 
@@ -50,7 +57,7 @@
           background-color: #619ac3;
         }
 
-        &.disabled {
+        &:disabled {
           background-color: #8a8a8a;
         }
       }
