@@ -1,5 +1,5 @@
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
-import MyAside from './components/MyAside/index';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import App from './App';
 import StartStudy from './pages/StartStudy';
 
 const router = createBrowserRouter([
@@ -9,11 +9,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element:
-      <>
-        <MyAside />
-        <Outlet />
-      </>,
+    element: <App />,
     children: [
       {
         path: "/study",

@@ -1,7 +1,11 @@
+import { Outlet } from "react-router-dom"
+import MyAside from "./components/MyAside"
+
 function App() {
   return (
     <>
-      <span>hi</span>
+      <MyAside />
+      <Outlet />
     </>
   )
 }
