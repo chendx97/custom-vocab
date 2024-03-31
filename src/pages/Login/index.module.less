@@ -1,0 +1,44 @@
+.loginPage {
+  position: relative;
+  flex: 1;
+  background-color: aliceblue;
+
+  :global {
+    .login-card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      display: flex;
+      align-items: stretch;
+      height: 500px;
+
+      .login-img {
+        width: 400px;
+        background-color: #69b1ff;
+      }
+    }
+
+    .login-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 50px;
+      width: 400px;
+      font-size: 20px;
+      color: #333;
+      background-color: #fff;
+
+      .login-input {
+        margin-bottom: 20px;
+      }
+
+      .login-tip {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #666;
+      }
+    }
+  }
+}

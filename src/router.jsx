@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import StartStudy from './pages/StartStudy';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,13 @@ const router = createBrowserRouter([
       {
         path: "/study",
         element: <StartStudy />,
-      }
+      },
     ],
   },
+  {
+    path: '/login',
+    element: <Login />,
+  }
 ]);
 
 export default router;
