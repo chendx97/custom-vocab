@@ -7,6 +7,7 @@ import styles from './index.module.less';
 function Login() {
   const [name, setName] = useState('');
   const [pwd, setPwd] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
   async function handleLogin() {
@@ -18,14 +19,15 @@ function Login() {
       message.error('请输入密码');
       return;
     }
-    const { message: msg } = await window.postFetch('/user/add', {
+    const { message: msg } = await window.postFetch(`/user/${isLogin ? 'login' : 'add'}`, {
       name,
       pwd: md5(pwd),
     });
     if (msg === 'success') {
       navigate('/');
+    } else {
+      message.error(msg);
     }
-    message.error(msg);
   };
 
   return (
@@ -37,8 +39,8 @@ function Login() {
           <Input className='login-input' value={name} onChange={(e) => setName(e.target.value)} placeholder='请输入用户名' />
           <div className="row-label">密码</div>
           <Input.Password className='login-input' value={pwd} onChange={(e) => setPwd(e.target.value)} placeholder='请输入密码' />
-          <div className="login-tip">如果是未注册用户，则点击登录代表注册</div>
-          <Button className='login-btn' type='primary' size='large' onClick={handleLogin}>登录</Button>
+          <Button className='login-btn' type='primary' size='large' onClick={handleLogin}>{isLogin ? '登录' : '注册'}</Button>
+          <Button className='btn-register' type='link' onClick={() => setIsLogin(!isLogin)}>{isLogin ? '注册' : '登录'}</Button>
         </div>
       </div>
     </div>
