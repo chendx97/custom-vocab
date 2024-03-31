@@ -18,13 +18,14 @@ function Login() {
       message.error('请输入密码');
       return;
     }
-    const { code } = await window.postFetch('/user/add', {
+    const { message: msg } = await window.postFetch('/user/add', {
       name,
       pwd: md5(pwd),
     });
-    if (code === 200) {
+    if (msg === 'success') {
       navigate('/');
     }
+    message.error(msg);
   };
 
   return (

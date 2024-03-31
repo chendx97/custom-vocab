@@ -1,3 +1,4 @@
+import { message } from 'antd';
 const prefix = '/vapi';
 
 // 封装GET请求
@@ -11,10 +12,11 @@ window.getFetch = async (url, params) => {
       const data = await response.json();
       return data;
     } else {
-      throw new Error(`Request failed with status ${response.status}`);
+      message.error('请求失败');
+      return new Promise(() => { });
     }
   } catch (error) {
-    console.error('An error occurred:', error.message);
+    message.error('网络错误');
   }
 }
 
@@ -32,9 +34,10 @@ window.postFetch = async (url, params) => {
       const data = await response.json();
       return data;
     } else {
-      throw new Error(`Request failed with status ${response.status}`);
+      message.error('请求失败');
+      return new Promise(() => { });
     }
   } catch (error) {
-    console.error('An error occurred:', error.message);
+    message.error('网络错误');
   }
 }
